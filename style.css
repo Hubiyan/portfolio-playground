@@ -324,7 +324,10 @@ p {
     color: var(--bg-white);
 }
 .btn-seco:hover {
-    background-color: var(--grey-500);
+    background-color: var(--grey-800);
+}
+.btn-seco:active {
+    background-color: var(--grey-900) !important;
     color: var(--bg-white);
 }
 .carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
@@ -358,6 +361,12 @@ p {
     background-color: var(--blue-300);
     color: var(--bg-white);
 }
+.btn-primary:hover {
+    background-color: var(--blue-400);
+}
+.btn-primary:active {
+    background-color: var(--blue-500);
+}
 .btn-grey {
     background-color: var(--grey-50);
     color: var(--grey-500);
@@ -366,6 +375,12 @@ p {
     border: 1px solid var(--blue-300);
     background-color: var(--blue-50);
     color: var(--blue-300);
+}
+.btn-social:hover {
+    background-color: var(--blue-100);
+}
+.btn-social:active {
+    background-color: var(--blue-200);
 }
 .icon-btn {
     padding: var(--spacing-14);
@@ -515,10 +530,15 @@ p {
 }
 
 .btn-green {
-    background-color: #29FF50;
-    color: #00510F;
+    background-color: #26f74c;
     border-radius: var(--spacing-100);
     z-index: 0;
+}
+.btn-green:hover {
+    background-color: #21ec46;
+}
+.btn-green:active {
+    background-color: #18db3c;
 }
 .dot-div {
     width: var(--spacing-04);
@@ -1374,7 +1394,18 @@ p {
             max-height: 45rem;
             border-radius: var(--spacing-28) var(--spacing-28) 0 0 ;
         }
-
+        .btn-primary:hover {
+            background-color: var(--blue-300);
+        }
+        .btn-seco:hover {
+            background-color: var(--grey-700);
+        }
+        .btn-social:hover {
+            background-color: var(--blue-50);
+        }
+        .btn-green:hover {
+            background-color: #29FF50;
+        }
 }
 
 @media screen and (min-width: 350px) and (max-width: 520px) {
