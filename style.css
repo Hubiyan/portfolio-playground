@@ -303,7 +303,7 @@ p {
 } 
 .section-description {
     font-size: var(--spacing-18);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--grey-300);
 }
 .my-button {
@@ -428,10 +428,7 @@ p {
     bottom: 0;
     left: 0;
 }
-.loom-video-abt-me {
-    width: 100%;
-    height: 100%;
-}
+
 .testimonial-container {
     user-select: none; /* Prevents text selection */
     overflow-x: auto;
@@ -631,16 +628,14 @@ p {
     margin-top: var(--spacing-200);
 }
 .case-study-image {
-    max-height: 45rem;
+    object-fit: contain;
 }
 .case-study-card {
-    padding-bottom: var(--spacing-00);
+    padding:var(--spacing-32) var(--spacing-32) 0 var(--spacing-32);
     .section-title {
         font-size: var(--spacing-30);
     }
-}
-.case-study-image {
-    width: 80%;
+    max-height: 30rem;
 }
 .company-box {
     border: 1px solid var(--grey-50);
@@ -952,12 +947,14 @@ p {
     width: 24px;
     height: 24px;
     object-fit: contain;
+    /* margin-left: var(--spacing-32); */
 }
 
 .accordion-button:not(.collapsed)::after {
     background: url("images/btn-icons/red-cross.svg") !important;
     width: 24px;
     height: 24px;
+    /* margin-left: var(--spacing-32); */
 }
 
 
@@ -978,7 +975,7 @@ p {
 }
 .modal-inner-head {
     color: var(--grey-500);
-    font-size: var(--spacing-18);
+    font-size: var(--spacing-20);
     font-weight: 600;
 }
 .modal-inner-body {
@@ -986,7 +983,7 @@ p {
     font-size: var(--spacing-18);
     font-weight: 400;
     line-height: 140%;
-    color: var(--grey-300);
+    color: var(--grey-500);
 }
 .exp-inner-modal::-webkit-scrollbar {
     width: 4px;
@@ -1054,6 +1051,10 @@ p {
     height: var(--spacing-06);
     border-radius: var(--spacing-100);
     transition: width 300ms ease-out;
+}
+.loom-video-about-me {
+    border-radius: var(--spacing-24);
+    overflow: hidden;
 }
 /* h1 responsive manipualtion */
 @media screen and (min-width: 0px) and (max-width: 330px) {
@@ -1222,6 +1223,9 @@ p {
     .res-0-520-align-start {
         align-items: flex-start !important;
     }
+    .res-0-520-gap-32 {
+        gap: var(--spacing-32) !important;
+    }
     .res-0-520-gap-16 {
         gap: var(--spacing-16) !important;
     }
@@ -1239,7 +1243,7 @@ p {
         font-weight: 500;
     }
     .about-section {
-        height: 30rem;
+        height: fit-content;
     }
     .testimonial-img {
         height: var(--spacing-24);
@@ -1400,9 +1404,15 @@ p {
         .people-avatar {
             width: var(--spacing-32);
         }
+        .case-study-card {
+            justify-content: start;
+            height: 33rem;
+        }
+        .image-wrapper {
+            min-width: 100%;
+        }
         .case-study-image {
-            max-height: 45rem;
-            border-radius: var(--spacing-28) var(--spacing-28) 0 0 ;
+            min-width: 100%;
         }
         .btn-primary:hover {
             background-color: var(--blue-300);
@@ -1429,6 +1439,13 @@ p {
         }
         .show-gradient {
             width: 18% !important;
+        }
+        .abt-me-card {
+            padding: var(--spacing-12);
+        }
+        .loom-video-about-me {
+            border-radius: var(--spacing-14);
+            overflow: hidden;
         }
 
 }
@@ -1524,6 +1541,10 @@ p {
 
       }
 
+}
+
+.w-90 {
+    width: 90% !important;
 }
 .w-60 {
     width: 60% !important;
