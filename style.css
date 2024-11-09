@@ -1007,6 +1007,7 @@ p {
     background-color: #F3F3F3;
     border-radius: var(--spacing-18);
     padding: var(--spacing-24);
+    min-height: 20rem;
     max-height: 19rem !important;
     overflow-y: scroll;
     overflow-x: hidden;
