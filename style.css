@@ -1061,6 +1061,7 @@ p {
     transition: width 300ms ease-out;
 }
 .loom-video-about-me {
+    /* height: 35rem; */
     border-radius: var(--spacing-24);
     overflow: hidden;
 }
