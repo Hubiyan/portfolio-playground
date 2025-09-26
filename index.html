@@ -36,6 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script defer src="bootstrap.bundle.min.js"></script>
   <script defer src="script.js"></script>
 </head>
@@ -267,8 +268,18 @@
                     <div class="small-card">
                         <div class="inner-small-grey inner-grey-me d-flex flex-column align-items-center">
                             <h6 class="card-name name-me">I'm Hubiyan</h6>
-                            <img class="main-character" src="images/characters/main-character.png" alt="Illustrated image of Farish Hubiyan">
-                            
+                            <!-- <img class="main-character" src="images/characters/main-character.gif" alt="Illustrated image of Farish Hubiyan"> -->
+                            <lottie-player
+                            class="main-character" 
+                            id="heroAnim"
+                            src="assets/lottie/animation.json"
+                            background="transparent"
+                            speed="1"
+                            loop
+                            autoplay
+                            >
+                            </lottie-player>
+
                         </div>
                         
                     </div>
