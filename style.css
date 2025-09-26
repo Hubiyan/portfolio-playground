@@ -122,7 +122,7 @@
     --blue-900: #192856;
     --blue-1000: #040F2E;
     /* BG White */
-    --bg-white: #FDFFFC;
+    --bg-white: #FFFFFF;
     --bg-grey: #F7F7F7;
     --bg-video: #ffffff;
 }
@@ -223,10 +223,10 @@ body {
 
 }
 .main-logo {    
-    width: var(--spacing-54);
-    height: var(--spacing-54);
+    width: var(--spacing-40);
+    height: var(--spacing-40);
     box-shadow: 0px 63.48px 17.91px 0px rgba(0, 0, 0, 0),0px 40.69px 16.28px 0px rgba(0, 0, 0, 0),0px 22.79px 13.02px 0px rgba(0, 0, 0, 0.02),0px 9.77px 9.77px 0px rgba(0, 0, 0, 0.03),0px 3.26px 4.88px 0px rgba(0, 0, 0, 0.03);
-    border-radius: var(--spacing-12);
+    border-radius: var(--spacing-08);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1096,6 +1096,47 @@ p {
     border-radius: var(--spacing-24);
     overflow: hidden;
 }
+
+/* ===== Time Component ===== */
+.time-comp{
+  display:inline-flex;
+  align-items:flex-end;              /* bottom align */
+  gap:16px;                          /* spacing between place and time */
+}
+
+/* Place (pin + city) */
+.time-comp .place{
+  display:inline-flex;
+  align-items:flex-end;
+  gap:4px;
+}
+.time-comp .pin{
+  font-size:16px; line-height:1.2; color:#000; font-weight:400;
+}
+.time-comp .city{
+  font-size:16px; line-height:1.2; color:#000; font-weight:300; /* Light */
+}
+
+/* Clock (hh:mm + seconds + AM/PM) */
+.time-comp .clock{
+  display:inline-flex;
+  align-items:flex-end;
+  gap:3px;
+}
+.time-comp .hm{
+  font-size:16px; line-height:1.2; color:#000; font-weight:300; /* Light */
+}
+.time-comp .sec{
+  font-size:12px; line-height:1.26; color:#7C7C7C; font-weight:500; /* Medium */
+}
+.time-comp .ampm{
+  margin-left:4px;
+  font-size:16px; line-height:1.2; color:#000; font-weight:300; /* Light */
+}
+/* ===== Time Component ===== */
+
+
+
 /* h1 responsive manipualtion */
 @media screen and (min-width: 0px) and (max-width: 330px) {
     .main-title {
@@ -1608,6 +1649,9 @@ p {
     .main-character {
         position: absolute;
         bottom: 0;
+    }
+    .city, .pin, .hm, .sec, .ampm {
+        font-size: var(--spacing-12) !important;
     }
 }
 
