@@ -260,6 +260,10 @@ p {
     border-radius: var(--spacing-14);
     overflow: hidden;
 }
+.inner-grey-me {
+    height: -webkit-fill-available;
+    justify-content: space-between;
+}
 
 .cardname-box {
     width: 100%;
@@ -269,6 +273,15 @@ p {
     font-size: var(--spacing-16);
     font-weight: 400;
     color: var(--grey-300);
+}
+
+.name-me {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
 }
 
 .comp-frame-grey {
@@ -766,7 +779,7 @@ p {
     text-fill-color: transparent;
 }
 .design-adv-title {
-    font-size: var(--spacing-52) !important;
+    font-size: var(--spacing-42) !important;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -884,7 +897,7 @@ p {
  }
  .boujee-text {
     --bg-size: 400%;
-    --color-one: hsl(15 90% 55%);
+    --color-one: hsl(15, 100%, 41%);
     --color-two: hsl(40 95% 55%);
     background: linear-gradient(
                   90deg,
@@ -892,9 +905,25 @@ p {
                   var(--color-two),
                   var(--color-one)
                 ) 0 0 / var(--bg-size) 100%;
-    animation: move-bg 5s infinite linear;
+    animation: move-bg 12s infinite linear;
     color: transparent;
     background-clip: text;
+    margin-right: 8px;
+  }
+ .boujee-text-green {
+    --bg-size: 400%;
+    --color-one: hsl(128, 100%, 28%);
+    --color-two: hsl(128, 95%, 55%);
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    animation: move-bg 12s infinite linear;
+    color: transparent;
+    background-clip: text;
+    margin-right: 8px;
   }
   
   @keyframes move-bg {
@@ -1528,6 +1557,9 @@ p {
     }
     .people-avatar {
         width: var(--spacing-36);
+    }
+    .name-me {
+        padding: var(--spacing-16) 0 var(--spacing-16) 0;
     }
 }
 @media screen and (min-width: 520px) and (max-width: 840px) {
