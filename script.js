@@ -191,6 +191,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize Confetti with the hidden trigger
+  const confetti = new Confetti("confetti-trigger");
+  confetti.destroyTarget(false); // prevent hiding trigger
+
+  let fired = false;
+
+  function isAtBottom(offset = 10) {
+    return (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - offset);
+  }
+
+  function fireConfettiAtCenter() {
+    const x = window.innerWidth / 2;
+    const y = window.innerHeight / 2;
+
+    const trigger = document.getElementById("confetti-trigger");
+    const event = new MouseEvent("click", {
+      clientX: x,
+      clientY: y,
+      bubbles: true
+    });
+    trigger.dispatchEvent(event);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!fired && isAtBottom()) {
+      fired = true;
+      fireConfettiAtCenter();
+    }
+  });
+});
+
+
+
+
+
+
 
 
 
