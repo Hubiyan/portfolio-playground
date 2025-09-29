@@ -226,6 +226,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// Blur effect
+
+    (function buildBlurStack() {
+      const root = getComputedStyle(document.documentElement);
+      const L = parseInt(root.getPropertyValue('--layers')) || 10;
+      const blurMin = parseFloat(root.getPropertyValue('--blur-min')) || 1;
+      const blurMax = parseFloat(root.getPropertyValue('--blur-max')) || 14;
+      const angle = root.getPropertyValue('--band-angle')?.trim() || '180deg';
+      const win = root.getPropertyValue('--band-window')?.trim() || '10%';
+      const feather = root.getPropertyValue('--band-feather')?.trim() || '10%';
+
+      const stack = document.getElementById('blurStack');
+      stack.innerHTML = '';
+
+      const lerp = (a, b, t) => a + (b - a) * t;
+
+      for (let i = 0; i < L; i++) {
+        const layer = document.createElement('div');
+        layer.className = 'blur-layer';
+
+        const start = i * 10;
+        const s = start;
+        const a = start + parseFloat(feather);
+        const b = a + parseFloat(win);
+        const e = b + parseFloat(feather);
+
+        const mask = `linear-gradient(${angle},
+          transparent ${s}%,
+          black ${a}%,
+          black ${b}%,
+          transparent ${e}%
+        )`;
+
+        const t = (i) / (L - 1 || 1);
+        const blur = lerp(blurMin, blurMax, t).toFixed(2) + 'px';
+
+        layer.style.webkitMaskImage = mask;
+        layer.style.maskImage = mask;
+        layer.style.backdropFilter = `blur(${blur})`;
+        layer.style.webkitBackdropFilter = `blur(${blur})`;
+
+        stack.appendChild(layer);
+      }
+    })();
+
 
 
 
